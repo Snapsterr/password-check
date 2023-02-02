@@ -1,0 +1,87 @@
+@import '../../styles/variables';
+
+.input {
+  display: inline-block;
+  position: relative;
+  width: 75%;
+  
+  &__field {
+    width: 100%;
+    height: 50px;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 2px solid $borderGray;
+
+    &:focus {
+      outline: none;
+      border: 2px solid blue;
+    }
+
+    &:focus + .input__label .input__text {
+      color: blue;
+    }
+  }
+
+  &__field:focus + .input__label .input__text, 
+  :not(.input__field[value=""]) + .input__label .input__text {
+    font-size: 13px;
+    transform: translate(0, -175%);
+    background-color: white;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 14px;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 100%;
+    color: $borderGray;
+    transition: all 0.15s ease-out;
+  }
+
+  &__tooltip {
+    font-size: 13px;
+    line-height: 100%;
+    margin-top: 4px;
+    color: red;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .input {
+    width: 100%;
+    
+    &__field {
+      height: 44px;
+      padding: 12px;
+      font-size: 15px;
+    }
+  
+    &__field:focus + .input__label .input__text, 
+    :not(.input__field[value=""]) + .input__label .input__text {
+      font-size: 12px;
+    }
+  
+    &__label {
+      left: 12px;
+    }
+  
+    &__text {
+      font-size: 14px;
+    }
+  
+    &__tooltip {
+      font-size: 11px;
+    }
+  }
+}
