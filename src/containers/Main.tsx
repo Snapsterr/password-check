@@ -38,7 +38,7 @@ const Main = () => {
 
   return (
     <main className="main">
-      <h1 className="main__title">Check your password strenght:</h1>
+      <h1 className="main__title">Check your password strength:</h1>
       <InputField
         value={value}
         onChangeHandler={inputHandler}
