@@ -14,15 +14,12 @@
   }
 }
 
-[data-password="empty"] {
+[data-password="empty"], [data-password="easy"], [data-password="medium"] {
   color: $gray;
-}
-[data-password="short"], [data-password="easy"], [data-password="medium"] {
-  color: $red;
 }
 
-[data-password="easy"]:not(:first-child) {
-  color: $gray;
+[data-password="short"], [data-password="easy"]:first-child {
+  color: $red;
 }
 
 [data-password="medium"]:not(:last-child) {
@@ -31,7 +28,6 @@
 [data-password="strong"] {
   color: $green;
 }
-
 
 @media screen and (max-width: 600px) {
   .check-section {
