@@ -10,8 +10,10 @@ const Main = () => {
 
   const passwordCheck = (str: string) => {
     const digitsRegex = str.match(/(?=.*[0-9])/) ? true : false
-    const lettersRegex = str.match(/(?=[A-Za-z])/) ? true : false
-    const symbolsRegex = str.match(/(?=.*[^A-Za-z0-9])/) ? true : false
+    const lettersRegex = str.match(/(?=[A-Za-zА-ЯЁЇІЄҐа-яёїіє])/) ? true : false
+    const symbolsRegex = str.match(/(?=.*[^A-Za-zА-ЯЁЇІЄҐа-яёїіє0-9])/)
+      ? true
+      : false
 
     const isShortCheck = str.length > 0 && str.length < 8
     const isEasyCheck = digitsRegex || lettersRegex || symbolsRegex
